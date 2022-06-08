@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="profile-wrap">
+
+<h2>{{'안녕하세요!  ' + user.nick + '  님'}}</h2><hr>
+
+<div class="profile-line">
+
+  <span class="profile-box">
+    <h3>이름</h3>
+    <span class="name">{{user.name}}</span>   
+    <h3>닉네임</h3>
+    <span class="nick">{{user.nick}}</span>   
+    <h3>연락처</h3>
+    <span class="tel">{{user.tel}}</span>   
+    <h3>메일</h3>
+    <span class="email">{{user.email}}</span>   
+  </span>   
+
+  <span class="profile-edit-box">
+    <h3>닉네임 수정하기</h3>
+      
+        <form id="profile-form" action="/profile" method="post">
+          <input type="text" name="edit" placeholder="수정할 닉네임" />
+          <button id="user_update" type="submit" class="jogak-btn">수정하기</button>
+        </form>
+      
+  </span>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+  <script>
+  </script>
+{% endblock %}

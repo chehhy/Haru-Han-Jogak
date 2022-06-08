@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/main.css">
+
+    <style>
+      *{font-family: 'IBM Plex Sans KR', sans-serif;
+        font-style: normal;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <span style="font-family:'Hind+Siliguri'; text-align : left; font-size:25px"> 
+        Haru Han Jogak
+        </span>
+        {% if user and user.id %}
+            <a id="logout" href="/auth/logout" class="header-btn" style="float: right;">로그아웃</a>
+        {% else %}
+            <a id="join" href="/login" class="header-btn">로그인</a>
+            <a id="join" href="/join" class="header-btn">회원가입</a>
+        {% endif %}
+      </div>
+
+      <div class="page-content">
+        <div id="wrap" style="margin-top:0px;">
+          <div class="tab_menu">
+            <aside style="margin-top:0px;">
+              <ul class="list">
+               <li><a href="/" class="btn">홈</a></li>
+               <li><a href="/profile" class="btn">내 프로필</a></li>
+               <li><a href="/show_all" class="btn">모든 조각 보기</a></li>
+               <li><a href="/showUser/show_user" class="btn">내 조각 보기</a></li>
+               <li><a href="/write" class="btn">조각 쓰기</a></li>
+              </ul>
+           </aside>
+          </div>
+          </div>
+
+          <input id="current_day" type="hidden" name="current_day">
+
+          <div class="page-body">
+             {% if user and user.id %}
+             <input id="my-id" type="hidden" value="{{user.id}}">
+              {% endif %}
+
+              {% block content %}
+              {% endblock %}
+
+          </div>
+      </div>
+      </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = () => {
+        if (new URL(location.href).searchParams.get('loginError')) {
+          alert(new URL(location.href).searchParams.get('loginError'));
+        }
+      };
+
+      let day = Math.floor(Date.now() / 1000 / (60 * 60 * 24)); // 오늘 날짜 구하기
+      document.getElementById('current_day').value = day;
+
+    </script>
+    {% block script %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>오늘의 조각 쓰기</h2>
+    <div class="timeline">
+            <!-- 오늘의 질문 박스 -->
+            <div class="questionBox">
+              <p style = "font-size: 20px"><b>From.조각</b><br>{{question.content}}<p></p>
+            </div> 
+      {% if user %}
+        {% if post %}      
+        <h3>오늘은 이미 조각을 작성하셨습니다! 내 조각 보기에서 확인하세요.</h3>  
+        {% else %}
+        <div>
+          <form id="twit-form" action="/post" method="post" enctype="multipart/form-data">
+            <div class="input-group">
+              <textarea id="twit" name="content" maxlength="1000"></textarea>
+            </div>
+            <div class="img-preview">
+              <img id="img-preview" src="" style="display: none;" width="250" alt="미리보기">
+              <input id="img-url" type="hidden" name="url">
+            </div>
+            <div>
+              <label id="img-label" for="img">사진 업로드</label>
+              <input id="img" type="file" accept="image/*">
+              <button id="twit-btn" type="submit" class="btn"><b>등록하기</b></button>
+            </div>
+          </form>
+        </div>
+        {% endif %}
+      {% endif %}
+    </div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    if (document.getElementById('img')) {
+      document.getElementById('img').addEventListener('change', function(e) {
+        const formData = new FormData();
+        console.log(this, this.files);
+        formData.append('img', this.files[0]);
+        axios.post('/post/img', formData)
+          .then((res) => {
+            document.getElementById('img-url').value = res.data.url;
+            document.getElementById('img-preview').src = res.data.url;
+            document.getElementById('img-preview').style.display = 'inline';
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      });
+    }
+   
+  </script>
+{% endblock %}

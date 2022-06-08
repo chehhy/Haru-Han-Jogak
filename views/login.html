@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="profile-wrap">
+  <h2>로그인</h2><hr>
+<form id="login-form" action="/auth/login" method="post">
+    <div class="input-group">
+      <label for="email">이메일</label>
+      <input id="email" type="email" name="email" required autofocus>
+    </div>
+    <div class="input-group">
+      <label for="password">비밀번호</label>
+      <input id="password" type="password" name="password" required>
+    </div>
+    <button id="login" type="submit" class="jogak-btn">로그인</button>
+  </form>
+</div>  
+{% endblock %}
+
+{% block script %}
+  <script>
+    window.onload = () => {
+      if (new URL(location.href).searchParams.get('error')) {
+        alert('이미 존재하는 이메일입니다.');
+      }
+    };
+  </script>
+{% endblock %}
