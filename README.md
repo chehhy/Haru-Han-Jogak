@@ -6,7 +6,7 @@
 ### 하루에 한 번 업데이트되는 질문에 대답하며 사람들과 공감대를 형성하는 SNS 서비스입니다.  
 　  
    
-## :frog: 프로젝트 소개
+## 프로젝트 소개
 
 하루한조각은 삶의 조각을 꺼내보고 기록한다는 뜻으로, 매일 한 개의 질문에 대한 답변을 작성하는 SNS입니다.  
 
@@ -14,7 +14,7 @@
 또한 마땅한 글감이 없는 사용자들에게 SNS에 대한 허들을 낮춰주는 효과도 있습니다.  
 　  
    
-## :pushpin: 기술 스택 및 라이브러리
+## 기술 스택 및 라이브러리
 
 ### Back-end
 <img alt="Nodejs" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white"> <img alt="Express" src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=Express&logoColor=white"> <img alt="Sequalize" src="https://img.shields.io/badge/Sequalize-8cbe68?style=for-the-badge&logo=Node.js&logoColor=white"> <img alt="MySQL" src="https://img.shields.io/badge/MySQL-0769AD?style=for-the-badge&logo=Node.js&logoColor=white">
@@ -24,7 +24,7 @@
 <br></br>
 　  
 
-## :computer: 실행 화면
+## 실행 화면
 
 * ### 메인페이지
 ![image](https://user-images.githubusercontent.com/90196490/220717927-03a54f24-0452-4f7b-a792-2a00eaa540c5.png)
