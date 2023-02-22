@@ -1,21 +1,21 @@
 # 하루 한 조각  : QnA형 SNS 웹 서비스
 
 ### :raising_hand: 최근 당신의 가장 행복했던 순간은 언제인가요?
+### :raising_hand: 카페에 가서 늘 마시는 음료가 있나요?
+### :raising_hand: 나의 건강 관리법을 사진과 함께 공유해주세요!
 ### 하루에 한 번 업데이트되는 질문에 대답하며 사람들과 공감대를 형성하는 SNS 서비스입니다.  
 　  
    
 ## :frog: 프로젝트 소개
 
-### 프로젝트 소개와 기대 효과
 하루한조각은 삶의 조각을 꺼내보고 기록한다는 뜻으로, 매일 한 개의 질문에 대한 답변을 작성하는 SNS입니다.  
 
-예를 들어, 요즘 즐겨보는 드라마가 있으신가요? / 나와 잘 맞는 MBTI 유형이 있으신가요? / 최근에 몰두하고 있는 일은 무엇인가요?   
-등의 질문을 제공하고 사용자가 이에 대한 답변, 즉 '조각'을 작성할 수 있습니다.
-
-기존의 SNS들에 비해 공감대 형성이 원활하고, 한 주제에 대한 다양한 사람들의 생각을 들어볼 수 있다는 점을 기대할 수 있습니다.  
+기존의 SNS들에 비해 공감대 형성이 원활하고, 하나의 주제에 대한 다양한 생각을 들어볼 수 있습니다.  
 또한 마땅한 글감이 없는 사용자들에게 SNS에 대한 허들을 낮춰주는 효과도 있습니다.  
+　  
+   
+## :pushpin: 기술 스택 및 라이브러리
 
-### 기술 스택 및 라이브러리
 ### Back-end
 <img alt="Nodejs" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white"> <img alt="Express" src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=Express&logoColor=white"> <img alt="Sequalize" src="https://img.shields.io/badge/Sequalize-8cbe68?style=for-the-badge&logo=Node.js&logoColor=white"> <img alt="MySQL" src="https://img.shields.io/badge/MySQL-0769AD?style=for-the-badge&logo=Node.js&logoColor=white">
 
@@ -28,6 +28,7 @@
 
 * ### 메인페이지
 ![image](https://user-images.githubusercontent.com/90196490/220717927-03a54f24-0452-4f7b-a792-2a00eaa540c5.png)
+<br></br>
 
 * ### 내 프로필
 로그인한 유저의 프로필을 보여줍니다. 닉네임을 수정할 수 있습니다.
